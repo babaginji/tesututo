@@ -12,11 +12,11 @@
             border-color: #e91e63;
             background-color: #fff0f5;
         }
-        .button-group {
-            margin-top: 20px;
+        .button-group { 
+            margin-top: 20px; 
         }
-        .button-group button {
-            margin: 0 10px;
+        .button-group button { 
+            margin: 0 10px; 
         }
     </style>
 </head>
@@ -24,6 +24,7 @@
     <div class="container">
         <h1>AI投資診断</h1>
         <form method="POST" id="quizForm">
+
             <div class="question-page">
                 <p class="question">Q1. 主な投資の目的は？</p>
                 <div class="option" data-q="Q1" onclick="selectOption('Q1', this)">老後資金</div>
@@ -97,55 +98,31 @@
                     <button type="submit">診断する</button>
                 </div>
             </div>
+
         </form>
     </div>
 
     <script>
         let currentPage = 0;
-
         function showPage(n){
             const pages = document.querySelectorAll(".question-page");
-            pages.forEach((page,i)=>{
-                page.style.display = (i===n) ? "block" : "none";
-            });
-
-            // ページ切り替え時に必ず上に戻す
-            const container = document.querySelector(".container");
-            if(container){
-                container.scrollTop = 0;
-            }
-            window.scrollTo({top: 0, behavior: "instant"});
+            pages.forEach((page,i)=>{ page.style.display = (i===n)?"block":"none"; });
         }
-
         function nextPage(){
             const pages = document.querySelectorAll(".question-page");
-            if(currentPage < pages.length-1){
-                currentPage++;
-                showPage(currentPage);
-            }
+            if(currentPage < pages.length-1){ currentPage++; showPage(currentPage); }
         }
-
         function prevPage(){
-            if(currentPage > 0){
-                currentPage--;
-                showPage(currentPage);
-            }
+            if(currentPage>0){ currentPage--; showPage(currentPage); }
         }
-
         function selectOption(qName, element){
             document.querySelectorAll(`[data-q="${qName}"]`).forEach(el=>el.classList.remove("selected"));
             element.classList.add("selected");
             const input = document.getElementById(qName);
-            if(input){
-                input.value = element.textContent.trim();
-            }
+            if(input){ input.value = element.textContent.trim(); }
         }
-
-        window.onload = function(){
-            showPage(0);
-        }
+        window.onload = function(){ showPage(0); }
     </script>
 </body>
 </html>
-
 
