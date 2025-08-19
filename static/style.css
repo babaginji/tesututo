@@ -1,20 +1,20 @@
 body {
     font-family: "Yu Gothic", sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
     margin: 0;
     background: #fafafa;
+    padding: 0;
 }
 
 .container {
     text-align: center;
+    width: 100%;
     max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
 }
 
 h1 {
-    font-size: 2.5em;
+    font-size: clamp(1.8em, 5vw, 2.5em);
     margin-bottom: 40px;
     color: #e91e63;
 }
@@ -22,7 +22,7 @@ h1 {
 .question {
     font-weight: bold;
     margin: 30px 0 10px;
-    font-size: 1.2em;
+    font-size: clamp(1em, 4vw, 1.2em);
 }
 
 .option {
@@ -31,7 +31,7 @@ h1 {
     border: 2px solid #e91e63;
     border-radius: 6px;
     cursor: pointer;
-    font-size: 1.1em;
+    font-size: clamp(1em, 4vw, 1.1em);
     transition: 0.2s;
 }
 
@@ -48,7 +48,7 @@ h1 {
 button {
     margin-top: 30px;
     padding: 12px 24px;
-    font-size: 1.1em;
+    font-size: clamp(1em, 4vw, 1.1em);
     border: none;
     border-radius: 6px;
     background-color: #e91e63;
@@ -61,7 +61,18 @@ button:hover {
 }
 
 .result {
-    font-size: 1.5em;
+    font-size: clamp(1.2em, 4vw, 1.5em);
     font-weight: bold;
     margin: 20px 0;
+}
+.result-box {
+    margin: 20px auto;
+    padding: 20px;
+    border: 2px solid #e91e63;
+    border-radius: 8px;
+    background: #fce4ec;
+    font-size: clamp(1.2em, 4vw, 1.5em);
+    font-weight: bold;
+    max-width: 100%;
+    box-sizing: border-box;
 }
