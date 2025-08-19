@@ -101,7 +101,6 @@
 
         </form>
     </div>
-
     <script>
         let currentPage = 0;
         
@@ -111,8 +110,10 @@
                 page.style.display = (i===n) ? "block" : "none";
             });
         
-            // ページ切り替え時にスクロールをトップに戻す
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            // ページ切り替え後にスクロールをトップに戻す（少し遅延させる）
+            setTimeout(() => {
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 50);
         }
         
         function nextPage(){
