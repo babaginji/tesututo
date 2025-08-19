@@ -1,8 +1,14 @@
+/* 全体にボックスサイズを適用 */
+* {
+    box-sizing: border-box;
+}
+
 body {
     font-family: "Yu Gothic", sans-serif;
     margin: 0;
-    background: #fafafa;
     padding: 0;
+    background: #fafafa;
+    overflow-x: hidden; /* 横スクロールを防止 */
 }
 
 .container {
@@ -10,7 +16,7 @@ body {
     width: 100%;
     max-width: 600px;
     margin: 0 auto;
-    padding: 20px;
+    padding: 0 15px 20px 15px; /* 横余白と下余白 */
 }
 
 h1 {
@@ -65,6 +71,7 @@ button:hover {
     font-weight: bold;
     margin: 20px 0;
 }
+
 .result-box {
     margin: 20px auto;
     padding: 20px;
@@ -74,5 +81,4 @@ button:hover {
     font-size: clamp(1.2em, 4vw, 1.5em);
     font-weight: bold;
     max-width: 100%;
-    box-sizing: border-box;
 }

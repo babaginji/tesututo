@@ -5,14 +5,59 @@
 <title>診断結果</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+<style>
+* { box-sizing: border-box; }
+body {
+    font-family: "Yu Gothic", sans-serif;
+    margin: 0;
+    padding: 0;
+    background: #fafafa;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* スクロールなし */
+}
+.container {
+    text-align: center;
+    width: 100%;
+    max-width: 600px;
+    padding: 0 10px;
+}
+h1 {
+    font-size: clamp(1.8em, 5vw, 2.5em);
+    margin-bottom: 20px;
+    color: #e91e63;
+}
+.result-box {
+    margin: 15px auto;
+    padding: 15px;
+    border: 2px solid #e91e63;
+    border-radius: 8px;
+    background: #fce4ec;
+    font-size: clamp(1.2em, 4vw, 1.5em);
+    font-weight: bold;
+    max-width: 100%;
+}
+button {
+    width: 100%;
+    padding: 10px;
+    font-size: clamp(0.9em, 3vw, 1.1em);
+    border: none;
+    border-radius: 6px;
+    background-color: #e91e63;
+    color: white;
+    cursor: pointer;
+    margin-top: 10px;
+}
+button:hover { background-color: #d81b60; }
+</style>
 </head>
 <body>
 <div class="container">
     <h1>診断結果</h1>
     <p>あなたの投資タイプは…</p>
-    <div class="result-box">
-        {{ result }}
-    </div>
+    <div class="result-box">{{ result }}</div>
     <a href="{{ url_for('index') }}">
         <button>もう一度診断する</button>
     </a>
