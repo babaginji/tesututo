@@ -24,7 +24,6 @@
     <div class="container">
         <h1>AI投資診断</h1>
         <form method="POST" id="quizForm">
-            <!-- ページ1 -->
             <div class="question-page">
                 <p class="question">Q1. 主な投資の目的は？</p>
                 <div class="option" data-q="Q1" onclick="selectOption('Q1', this)">老後資金</div>
@@ -49,7 +48,6 @@
                 </div>
             </div>
 
-            <!-- ページ2 -->
             <div class="question-page">
                 <p class="question">Q4. 投資で損失が出ることについて、どのくらい許容できる？</p>
                 <div class="option" data-q="Q4" onclick="selectOption('Q4', this)">絶対に減らしたくない</div>
@@ -75,7 +73,6 @@
                 </div>
             </div>
 
-            <!-- ページ3 -->
             <div class="question-page">
                 <p class="question">Q7. 仮想通貨に興味はある？</p>
                 <div class="option" data-q="Q7" onclick="selectOption('Q7', this)">ある</div>
@@ -108,12 +105,16 @@
 
         function showPage(n){
             const pages = document.querySelectorAll(".question-page");
-            pages.forEach((page,i)=>{ page.style.display = (i===n) ? "block" : "none"; });
+            pages.forEach((page,i)=>{
+                page.style.display = (i===n) ? "block" : "none";
+            });
 
-            // ページ切替後に上にスクロール
-            setTimeout(() => {
-                window.scrollTo({ top: 0, behavior: 'smooth' });
-            }, 50);
+            // ページ切り替え時に必ず上に戻す
+            const container = document.querySelector(".container");
+            if(container){
+                container.scrollTop = 0;
+            }
+            window.scrollTo({top: 0, behavior: "instant"});
         }
 
         function nextPage(){
@@ -146,4 +147,5 @@
     </script>
 </body>
 </html>
+
 
