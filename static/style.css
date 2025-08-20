@@ -172,10 +172,11 @@ h1 {
 .link-like:hover { text-decoration: underline; }
 
 .container {
-    max-width: 95%;   /* 横幅をほぼ全幅に */
-    width: 95vw;      /* ビューポート幅に合わせる */
+    max-width: 95%;       /* 横幅はほぼ全幅 */
+    width: 95vw;          /* ビューポート幅に合わせる */
     margin: 0 auto;
-    padding: 20px;
+    padding: 20px 12px;   /* 上下20px、左右12pxで余白を少し確保 */
     text-align: center;
     box-sizing: border-box;
 }
+
