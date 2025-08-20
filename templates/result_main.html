@@ -1,30 +1,36 @@
 {% extends "base.html" %}
+
 {% block content %}
 <div class="container">
     <h1>診断結果</h1>
-    <p>あなたの投資タイプは…</p>
-    <div class="result-box">
-        メイン: {{ main_result }}<br>
-        サブ: {{ sub_result }}
+
+    <div class="result-box main-result">
+        <p>メインタイプ</p>
+        {{ main_result }}
+    </div>
+
+    <div class="result-box sub-result">
+        <p>サブタイプ</p>
+        {{ sub_result }}
     </div>
 
     <h2>次に進むにはこちら</h2>
     <div class="next-steps">
         <a href="{{ url_for('result_books') }}" class="card">
-            <img src="{{ url_for('static', filename='images/books.jpeg') }}" alt="本の紹介">
+            <img src="{{ url_for('static', filename='images/books.jpg') }}" alt="本の紹介">
             <p>本で学ぶ</p>
         </a>
         <a href="{{ url_for('result_learning') }}" class="card">
-            <img src="{{ url_for('static', filename='images/learning.jpeg') }}" alt="学習サイト">
+            <img src="{{ url_for('static', filename='images/learning.jpg') }}" alt="学習サイト">
             <p>学習サイト</p>
         </a>
         <a href="{{ url_for('result_start') }}" class="card">
             <img src="{{ url_for('static', filename='images/start.jpeg') }}" alt="投資開始">
             <p>投資を始める</p>
         </a>
-        <a href="{{ url_for('result_main') }}" class="card">
-            <img src="{{ url_for('static', filename='images/back.jpg') }}" alt="戻る">
-            <p>診断結果トップへ戻る</p>
+        <a href="#" class="card">
+            <img src="{{ url_for('static', filename='images/advice.jpeg') }}" alt="投資アドバイス">
+            <p>アドバイス</p>
         </a>
     </div>
 
