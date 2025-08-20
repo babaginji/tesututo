@@ -170,3 +170,12 @@ h1 {
     font-weight: bold;
 }
 .link-like:hover { text-decoration: underline; }
+
+.container {
+    max-width: 95%;   /* 横幅をほぼ全幅に */
+    width: 95vw;      /* ビューポート幅に合わせる */
+    margin: 0 auto;
+    padding: 20px;
+    text-align: center;
+    box-sizing: border-box;
+}
