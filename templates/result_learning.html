@@ -1,21 +1,22 @@
 {% extends "base.html" %}
-
 {% block content %}
-<h1>学習サイトリンク</h1>
-<p>（ダミーページ）ここに「タイプ別の学習サイト・動画・記事」へのリンク集を実装予定。</p>
+<div class="container">
+    <h1>学習サイトリンク</h1> <!-- result_learning.html はタイトルを変える -->
+    <p>（ダミーページ）ここに「タイプ別の学習サイト・動画・記事」へのリンク集を実装予定。</p>
 
-<div class="result-mini">
-    <p>あなたのタイプ：</p>
-    <ul>
-        <li>メイン：{{ main_result }}</li>
-        <li>サブ：{{ sub_result }}</li>
-    </ul>
-</div>
+    <div class="result-mini">
+        <p>あなたのタイプ：</p>
+        <ul>
+            <li>メイン：{{ main_result }}</li>
+            <li>サブ：{{ sub_result }}</li>
+        </ul>
+    </div>
 
-<div class="link-cards">
-    <a href="{{ url_for('result_main') }}" class="card">
-        <img src="{{ url_for('static', filename='images/back.jpg') }}" alt="back">
-        <p>診断結果トップへ戻る</p>
-    </a>
+    <div class="link-cards">
+        <a href="{{ url_for('result_main') }}" class="card">
+            <img src="{{ url_for('static', filename='images/back.jpg') }}" alt="戻る">
+            <p>診断結果トップへ戻る</p>
+        </a>
+    </div>
 </div>
 {% endblock %}

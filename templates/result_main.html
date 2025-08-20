@@ -1,17 +1,15 @@
 {% extends "base.html" %}
-
 {% block content %}
 <div class="container">
     <h1>診断結果</h1>
+    <p>あなたの投資タイプは…</p>
 
     <div class="result-box main-result">
-        <p>メインタイプ</p>
-        {{ main_result }}
+        メインタイプ：{{ main_result }}
     </div>
 
     <div class="result-box sub-result">
-        <p>サブタイプ</p>
-        {{ sub_result }}
+        サブタイプ：{{ sub_result }}
     </div>
 
     <h2>次に進むにはこちら</h2>
@@ -29,7 +27,7 @@
             <p>投資を始める</p>
         </a>
         <a href="#" class="card">
-            <img src="{{ url_for('static', filename='images/advice.jpeg') }}" alt="投資アドバイス">
+            <img src="{{ url_for('static', filename='images/advice.jpg') }}" alt="投資アドバイス">
             <p>アドバイス</p>
         </a>
     </div>
