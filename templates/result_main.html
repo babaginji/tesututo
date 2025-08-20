@@ -1,0 +1,39 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>診断結果</h1>
+
+<div class="result-box">
+    <p>メイン診断結果</p>
+    <h2>{{ main_result }}</h2>
+</div>
+
+<div class="result-box sub">
+    <p>サブ診断結果</p>
+    <h3>{{ sub_result }}</h3>
+</div>
+
+<h2>次に進むにはこちら 👇</h2>
+<div class="link-cards">
+    <a href="{{ url_for('result_books') }}" class="card">
+        <img src="{{ url_for('static', filename='images/books.jpeg') }}" alt="books">
+        <p>あなたが読むべき本</p>
+    </a>
+    <a href="{{ url_for('result_start') }}" class="card">
+        <img src="{{ url_for('static', filename='images/start.jpeg') }}" alt="start">
+        <p>さあ、実際に投資を始めよう</p>
+    </a>
+    <a href="{{ url_for('result_learning') }}" class="card">
+        <img src="{{ url_for('static', filename='images/learning.jpeg') }}" alt="learning">
+        <p>{{ main_result }} の人向けの学習サイトへ</p>
+    </a>
+</div>
+
+<!-- 追加アイデアのカード例（ダミー） -->
+<h2 style="margin-top:32px;">さらに活用する</h2>
+<div class="link-cards">
+    <a href="#" class="card">
+        <img src="{{ url_for('static', filename='images/advice.jpeg') }}" alt="advice">
+        <p>リスク管理のワンポイント</p>
+    </a>
+</div>
+{% endblock %}

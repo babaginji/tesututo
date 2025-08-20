@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>さあ、実際に投資を始めよう</h1>
+<p>（ダミーページ）ここに「口座開設の流れ」「仮想通貨取引所・Nexo などの案内」「必要なKYC、入金方法、注意点」を実装予定。</p>
+
+<div class="result-mini">
+    <p>あなたのタイプ：</p>
+    <ul>
+        <li>メイン：{{ main_result }}</li>
+        <li>サブ：{{ sub_result }}</li>
+    </ul>
+</div>
+
+<div class="link-cards">
+    <a href="{{ url_for('result_main') }}" class="card">
+        <img src="{{ url_for('static', filename='images/learning.jpeg') }}" alt="back">
+        <p>診断結果トップへ戻る</p>
+    </a>
+</div>
+{% endblock %}
