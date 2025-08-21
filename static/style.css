@@ -104,19 +104,27 @@ h1 {
     max-width: 560px;
 }
 /* 説明文トグル用 */
-.description-container {
+.description-container, .description2-container {
     margin-bottom: 20px;
 }
 
 .description {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 3; /* 最初は4行だけ表示 */
+    -webkit-line-clamp: 4; /* 説明文1は4行表示 */
     -webkit-box-orient: vertical;
     transition: max-height 0.3s ease;
 }
 
-.description.expanded {
+.description2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 説明文2は3行表示 */
+    -webkit-box-orient: vertical;
+    transition: max-height 0.3s ease;
+}
+
+.description.expanded, .description2.expanded {
     -webkit-line-clamp: unset;
 }
 
@@ -126,8 +134,9 @@ h1 {
     color: #e91e63;
     cursor: pointer;
     font-weight: bold;
-    padding: 5px 0;
+    padding: 5px 0; /* ここに値を入れる */
 }
+
 
 /* ================================================== */
 /*                カード型リンク                       */
