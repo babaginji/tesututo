@@ -57,15 +57,27 @@
 </div>
 
 <script>
-function toggleDescription(id, btn) {
-    const desc = document.getElementById(id);
-    if (desc.classList.contains('expanded')) {
-        desc.classList.remove('expanded');
-        btn.textContent = 'すべて見る ⇩';
-    } else {
-        desc.classList.add('expanded');
-        btn.textContent = '閉じる ⇧';
+    function toggleDescription(id, btn) {
+        const desc = document.getElementById(id);
+        if (!desc) return;
+    
+        // 初期 collapsed 高さ（行数に応じて調整可能）
+        const collapsedHeight = "1.5em"; // 約1行分
+        desc.style.overflow = "hidden";
+        desc.style.transition = "max-height 0.6s ease";
+    
+        if (desc.classList.contains("expanded")) {
+            // 閉じる
+            desc.style.maxHeight = collapsedHeight;
+            desc.classList.remove("expanded");
+            btn.textContent = "すべて見る ⇩";
+        } else {
+            // 開く（scrollHeightに合わせて伸びる）
+            desc.style.maxHeight = desc.scrollHeight + "px";
+            desc.classList.add("expanded");
+            btn.textContent = "閉じる ⇧";
+        }
     }
-}
-</script>
+    </script>
+    
 {% endblock %}
