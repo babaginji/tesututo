@@ -170,12 +170,12 @@ h1 {
     transform: translate(-50%, 50%);
     background: none;
     border: none;
-    color: #e91e63;
+    color: rgba(255, 0, 0, 0.5); /* 半透明に変更 */
     cursor: pointer;
     font-weight: bold;
     padding: 0;
     line-height: 1;
-    font-size: 0.95em;
+    font-size: 0.8em; /* 一回り小さく */
 }
 
 
