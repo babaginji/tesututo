@@ -3,53 +3,67 @@
 <div class="container">
     <h1>診断結果</h1>
 
-    <div class="result-box main-result">メインタイプ：{{ main_result }}</div>
+    <!-- メインタイプ -->
+    <div class="result-box main-result">
+        <span class="type-label">メインタイプ</span>
+        <p class="type-name">{{ main_result }}</p>
+    </div>
     <div class="description-container">
         <p class="description" id="main-desc">{{ main_desc }}</p>
-        <button class="toggle-btn" onclick="toggleText('main-desc', this)">すべて見る ⇩</button>
+        <button class="toggle-btn" onclick="toggleDescription('main-desc', this)">すべて見る ⇩</button>
     </div>
-    <div class="description2-container">
-        <p class="description description2" id="main-desc2">{{ main_desc2 }}</p>
-        <button class="toggle-btn" onclick="toggleText('main-desc2', this)">すべて見る ⇩</button>
+    <div class="description-container">
+        <p class="description" id="main-desc2">{{ main_desc2 }}</p>
+        <button class="toggle-btn" onclick="toggleDescription('main-desc2', this)">すべて見る ⇩</button>
     </div>
 
-    <div class="result-box sub-result">サブタイプ：{{ sub_result }}</div>
+    <!-- サブタイプ -->
+    <div class="result-box sub-result">
+        <span class="type-label">サブタイプ</span>
+        <p class="type-name">{{ sub_result }}</p>
+    </div>
     <div class="description-container">
         <p class="description" id="sub-desc">{{ sub_desc }}</p>
-        <button class="toggle-btn" onclick="toggleText('sub-desc', this)">すべて見る ⇩</button>
+        <button class="toggle-btn" onclick="toggleDescription('sub-desc', this)">すべて見る ⇩</button>
     </div>
-    <div class="description2-container">
-        <p class="description description2" id="sub-desc2">{{ sub_desc2 }}</p>
-        <button class="toggle-btn" onclick="toggleText('sub-desc2', this)">すべて見る ⇩</button>
+    <div class="description-container">
+        <p class="description" id="sub-desc2">{{ sub_desc2 }}</p>
+        <button class="toggle-btn" onclick="toggleDescription('sub-desc2', this)">すべて見る ⇩</button>
     </div>
 
     <h2>次に進むにはこちら</h2>
     <div class="next-steps">
         <a href="{{ url_for('result_books') }}" class="card">
-            <img src="{{ url_for('static', filename='images/books.jpg') }}" alt="本の紹介"><p>本で学ぶ</p>
+            <img src="{{ url_for('static', filename='images/books.jpg') }}" alt="本の紹介">
+            <p>本で学ぶ</p>
         </a>
         <a href="{{ url_for('result_learning') }}" class="card">
-            <img src="{{ url_for('static', filename='images/learning.jpg') }}" alt="学習サイト"><p>学習サイト</p>
+            <img src="{{ url_for('static', filename='images/learning.jpg') }}" alt="学習サイト">
+            <p>学習サイト</p>
         </a>
         <a href="{{ url_for('result_start') }}" class="card">
-            <img src="{{ url_for('static', filename='images/start.jpeg') }}" alt="投資開始"><p>投資を始める</p>
+            <img src="{{ url_for('static', filename='images/start.jpeg') }}" alt="投資開始">
+            <p>投資を始める</p>
         </a>
         <a href="#" class="card">
-            <img src="{{ url_for('static', filename='images/advice.jpg') }}" alt="投資アドバイス"><p>アドバイス</p>
+            <img src="{{ url_for('static', filename='images/advice.jpg') }}" alt="投資アドバイス">
+            <p>アドバイス</p>
         </a>
     </div>
 
-    <a href="{{ url_for('index') }}"><button>もう一度診断する</button></a>
+    <a href="{{ url_for('index') }}">
+        <button>もう一度診断する</button>
+    </a>
 </div>
 
 <script>
-function toggleText(id, btn) {
-    const elem = document.getElementById(id);
-    if (elem.classList.contains('expanded')) {
-        elem.classList.remove('expanded');
+function toggleDescription(id, btn) {
+    const desc = document.getElementById(id);
+    if (desc.classList.contains('expanded')) {
+        desc.classList.remove('expanded');
         btn.textContent = 'すべて見る ⇩';
     } else {
-        elem.classList.add('expanded');
+        desc.classList.add('expanded');
         btn.textContent = '閉じる ⇧';
     }
 }

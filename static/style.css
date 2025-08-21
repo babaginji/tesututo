@@ -74,25 +74,43 @@ h1 {
 /* ================================================== */
 /*                診断結果ボックス                    */
 /* ================================================== */
-.result-box.main-result,
-.result-box.sub-result {
-    margin: 20px auto;  
-    padding: 20px;
-    border-radius: 8px;
-    font-size: clamp(1.2em, 4vw, 1.5em);
+.result-box {
+    position: relative;
+    padding: 20px 15px 15px 15px;
+    border: 2px solid;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    background-color: #fff;
+}
+
+/* メインとサブで色を変更 */
+.main-result {
+    border-color: #e91e63; /* 赤 */
+}
+
+.sub-result {
+    border-color: #2196f3; /* 青 */
+}
+
+/* タイトルラベル */
+.type-label {
+    position: absolute;
+    top: -12px; /* 枠の上に半分だけ重なる位置 */
+    left: 15px;
+    background-color: #fff;
+    padding: 0 8px;
     font-weight: bold;
-    max-width: 100%;
+    font-size: 16px;
 }
 
-.result-box.main-result {
-    border: 2px solid #e91e63;
-    background: #fce4ec;
+/* 型名 */
+.type-name {
+    font-size: 14px; /* タイトルより小さく */
+    margin: 0;
+    padding-top: 5px;
+    word-break: break-word;
 }
 
-.result-box.sub-result {
-    border: 2px solid #2196f3;
-    background: #e3f2fd;
-}
 
 .result-mini {
     margin: 12px auto 24px;
