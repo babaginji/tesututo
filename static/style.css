@@ -104,6 +104,61 @@ h1 {
     max-width: 560px;
 }
 
+/* 診断結果の枠 */
+.result-box {
+    border: 2px solid red;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 20px auto;
+    text-align: left;
+    max-width: 800px;
+    background: #fff;
+}
+
+/* リンクを2列に */
+.links-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.links-grid img {
+    width: 100%;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    transition: transform 0.2s;
+}
+
+.links-grid img:hover {
+    transform: scale(1.05);
+}
+
+/* すべて見るボタン */
+.show-more {
+    margin-top: 10px;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 8px;
+    background: rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+.hidden {
+    display: none;
+}
+
+/* 戻るボタン */
+.back-btn {
+    margin-top: 30px;
+    text-align: center;
+}
+
+.back-btn img {
+    width: 150px;
+    cursor: pointer;
+}
+
 /* ================================================== */
 /*                カード型リンク                       */
 /* ================================================== */
