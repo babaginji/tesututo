@@ -137,11 +137,6 @@ h1 {
     position: relative;
     margin-bottom: 10px; /* 説明文2との間隔を少し広げる */
 }
-.description2-container {
-    position: relative;
-    margin: 0;
-    padding-bottom: 20px; /* 下に余白を作る */
-}
 
 
 .description, .description2 {
@@ -155,12 +150,12 @@ h1 {
 
 /* 説明文1 */
 .description {
-    -webkit-line-clamp: 4;
+    -webkit-line-clamp: 1;
 }
 
 /* 説明文2 */
 .description2 {
-    -webkit-line-clamp: 3;
+    -webkit-line-clamp: 1;
 }
 
 /* 展開時 */
