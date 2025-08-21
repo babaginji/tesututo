@@ -111,7 +111,7 @@ h1 {
 .description {
     overflow: hidden;
     display: -webkit-box;
-    -webkit-line-clamp: 4; /* 説明文1は4行表示 */
+    -webkit-line-clamp: 3; /* 説明文1は4行表示 */
     -webkit-box-orient: vertical;
     transition: max-height 0.3s ease;
 }
