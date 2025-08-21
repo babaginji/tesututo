@@ -137,6 +137,11 @@ h1 {
     position: relative;
     margin-bottom: 10px; /* 説明文2との間隔を少し広げる */
 }
+.description2-container {
+    margin-bottom: 15px; /* サブタイプ青枠との間隔を少し広げる */
+    position: relative;
+}
+
 
 .description, .description2 {
     overflow: hidden;
