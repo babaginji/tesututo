@@ -74,43 +74,54 @@ h1 {
 /* ================================================== */
 /*                診断結果ボックス                    */
 /* ================================================== */
+
 .result-box {
     position: relative;
     padding: 20px 15px 15px 15px;
     border: 2px solid;
     border-radius: 10px;
     margin-bottom: 20px;
-    background-color: #fff;
+    color: #000; /* 型名の文字色 */
 }
 
-/* メインとサブで色を変更 */
+/* メインとサブで色分け＋半透明背景 */
 .main-result {
-    border-color: #e91e63; /* 赤 */
+    border-color: #e91e63;
+    background-color: rgba(233, 30, 99, 0.1); /* 半透明ピンク */
 }
 
 .sub-result {
-    border-color: #2196f3; /* 青 */
+    border-color: #2196f3;
+    background-color: rgba(33, 150, 243, 0.1); /* 半透明ブルー */
 }
 
-/* タイトルラベル */
+/* タイトルラベル（枠に半分重なる） */
 .type-label {
     position: absolute;
-    top: -12px; /* 枠の上に半分だけ重なる位置 */
+    top: -12px;
     left: 15px;
-    background-color: #fff;
+    background-color: rgba(255, 255, 255, 0.8); /* 半透明白 */
     padding: 0 8px;
     font-weight: bold;
     font-size: 16px;
 }
 
+/* メイン／サブタイトル文字色 */
+.main-result .type-label {
+    color: #e91e63;
+}
+
+.sub-result .type-label {
+    color: #2196f3;
+}
+
 /* 型名 */
 .type-name {
-    font-size: 14px; /* タイトルより小さく */
+    font-size: 14px;
     margin: 0;
     padding-top: 5px;
     word-break: break-word;
 }
-
 
 .result-mini {
     margin: 12px auto 24px;
