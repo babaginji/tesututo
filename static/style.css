@@ -132,54 +132,52 @@ h1 {
     text-align: left;
     max-width: 560px;
 }
-/* 説明文トグル用 */
-.description-container, .description2-container {
-    margin-bottom: 5px;
+/* 説明文用共通スタイル */
+.description-container {
     position: relative;
+    margin-bottom: 10px; /* 説明文2との間隔を少し広げる */
+}
+
+.description, .description2 {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    line-height: 1.5em;
+    margin: 0;
+    transition: max-height 0.3s ease;
 }
 
 /* 説明文1 */
 .description {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /* 初期表示は4行 */
-    margin: 0;
-    padding-bottom: 0; /* トグルボタンとの隙間削除 */
-    line-height: 1.4;
+    -webkit-line-clamp: 4;
 }
 
 /* 説明文2 */
 .description2 {
-    overflow: hidden;
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp: 3; /* 初期表示は3行 */
-    margin: 0;
-    padding-bottom: 0; /* トグルボタンとの隙間削除 */
-    line-height: 1.4;
+    -webkit-line-clamp: 3;
 }
 
+/* 展開時 */
 .description.expanded, .description2.expanded {
     -webkit-line-clamp: unset;
 }
 
-/* トグルボタン */
+/* トグルボタン共通 */
 .toggle-btn, .toggle-btn2 {
     position: absolute;
-    bottom: 0; /* 説明文の最後の行に配置 */
-    left: 0;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 50%);
     background: none;
     border: none;
     color: #e91e63;
     cursor: pointer;
     font-weight: bold;
     padding: 0;
-    margin: 0;
     line-height: 1;
-    /* 説明文に半分重なるように少し上げる */
-    transform: translateY(50%);
+    font-size: 0.95em;
 }
+
 
 
 /* ================================================== */
