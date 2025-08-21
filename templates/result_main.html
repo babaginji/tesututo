@@ -6,12 +6,18 @@
     <div class="result-box main-result">
         メインタイプ：{{ main_result }}
     </div>
-    <p class="description">{{ main_desc }}</p> <!-- ボックス外に表示 -->
+    <div class="description-container">
+        <p class="description" id="main-desc">{{ main_desc }}</p>
+        <button class="toggle-btn" onclick="toggleDescription('main-desc', this)">すべて見る ⇩</button>
+    </div>
 
     <div class="result-box sub-result">
         サブタイプ：{{ sub_result }}
     </div>
-    <p class="description">{{ sub_desc }}</p> <!-- ボックス外に表示 -->
+    <div class="description-container">
+        <p class="description" id="sub-desc">{{ sub_desc }}</p>
+        <button class="toggle-btn" onclick="toggleDescription('sub-desc', this)">すべて見る ⇩</button>
+    </div>
 
     <h2>次に進むにはこちら</h2>
     <div class="next-steps">
@@ -37,4 +43,17 @@
         <button>もう一度診断する</button>
     </a>
 </div>
+
+<script>
+function toggleDescription(id, btn) {
+    const desc = document.getElementById(id);
+    if (desc.classList.contains('expanded')) {
+        desc.classList.remove('expanded');
+        btn.textContent = 'すべて見る ⇩';
+    } else {
+        desc.classList.add('expanded');
+        btn.textContent = '閉じる ⇧';
+    }
+}
+</script>
 {% endblock %}

@@ -103,6 +103,31 @@ h1 {
     text-align: left;
     max-width: 560px;
 }
+/* 説明文トグル用 */
+.description-container {
+    margin-bottom: 20px;
+}
+
+.description {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3; /* 最初は4行だけ表示 */
+    -webkit-box-orient: vertical;
+    transition: max-height 0.3s ease;
+}
+
+.description.expanded {
+    -webkit-line-clamp: unset;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    color: #e91e63;
+    cursor: pointer;
+    font-weight: bold;
+    padding: 5px 0;
+}
 
 /* ================================================== */
 /*                カード型リンク                       */
