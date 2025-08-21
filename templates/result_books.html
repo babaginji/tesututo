@@ -1,15 +1,16 @@
 {% extends "base.html" %}
 {% block content %}
 <div class="container">
-    <h1>あなたが読むべき本</h1> <!-- result_learning.html はタイトルを変える -->
-    <p>（ダミーページ）ここに「診断タイプ別おすすめ本」「楽天ブックスAPI」「Amazon検索リンク」「カーリルAPI連携」などを実装予定。</p>
+    <h1>あなたが読むべき本</h1>
 
-    <div class="result-mini">
-        <p>あなたのタイプ：</p>
-        <ul>
-            <li>メイン：{{ main_result }}</li>
-            <li>サブ：{{ sub_result }}</li>
-        </ul>
+    <div class="result-box main-result">
+        メインタイプ：{{ main_result }}
+        <p>{{ main_desc }}</p>
+    </div>
+
+    <div class="result-box sub-result">
+        サブタイプ：{{ sub_result }}
+        <p>{{ sub_desc }}</p>
     </div>
 
     <div class="link-cards">
