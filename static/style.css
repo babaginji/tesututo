@@ -80,7 +80,8 @@ h1 {
     padding: 20px 15px 15px 15px;
     border: 2px solid;
     border-radius: 10px;
-    margin-bottom: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
     color: #000; /* 型名の文字色 */
 }
 
